@@ -591,7 +591,7 @@ public class Profile {
         wait.until(ExpectedConditions.visibilityOfElementLocated(FieldEmpty));
         return driver.findElement(FieldEmpty).isDisplayed();
     }
-    public boolean ClickContinueButton() throws Exception {
+    public boolean ClickContinueButtonWithoutForgetPasswordg() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();

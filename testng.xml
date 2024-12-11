@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" verbose="2" preserve-order="true">
+    <listeners>
+        <listener class-name="Listener.AllureScreenShot"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="MobileApp_Automation">
+        <classes>
+            <class name="TestCases.SignupPage">
+                <methods>
+                    <include name="VerifySignupWithAlreadyExistsPhoneNumberAndEmailID"/>
+                    <include name="VerifySignupWithAlreadyExistsPhoneNumber"/>
+                    <include name="VerifySignupWithAlreadyExistsEmailID"/>
+                </methods>
+            </class>
+            <class name="TestCases.LoginTest">
+                <methods>
+                    <include name="VerifyLogin"/>
+                    <include name="VerifyTryToLoginWithOutEmailID"/>
+                    <include name="VerifyTryToLoginWithOutPassword"/>
+                    <include name="VerifyTryToLoginWithInvalidPassword"/>
+                    <include name="LoginWithInvalidUserEmail"/>
+                    <include name="Verifylinks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

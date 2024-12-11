@@ -23,6 +23,15 @@
                     <include name="Verifylinks"/>
                 </methods>
             </class>
+            <class name="TestCases.ProfilePage">
+                <methods>
+                    <include name="VerifyName"/>
+                    <include name="VerifySaveAddressDetails"/>
+                    <include name="VerifyUpdateTheImage"/>
+                    <include name="VerifyClusterHoldings"/>
+                    <include name="VerifyTransaction"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

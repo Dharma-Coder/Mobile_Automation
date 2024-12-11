@@ -189,7 +189,8 @@ public class gifting {
         Thread.sleep(10000);
         driver.findElement(RecipientEmail).sendKeys("ankitSDET01@gmail.com");
         Thread.sleep(10000);
-        driver.navigate().back();
+
+
         wait.until(ExpectedConditions.elementToBeClickable(RecipientName));
         driver.findElement(RecipientName).click();
         driver.findElement(RecipientName).click();
@@ -377,6 +378,7 @@ public class gifting {
         wait.until(ExpectedConditions.elementToBeClickable(PayNowButton));
         driver.findElement(PayNowButton).click();
         Thread.sleep(10000);
+
     }
 }
 

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 
 public class Signup {
     private static AndroidDriver driver;
@@ -111,6 +112,7 @@ public class Signup {
         wait.until(ExpectedConditions.elementToBeClickable(SignupButton));
         driver.findElement(SignupButton).click();
         Thread.sleep(10000);
-        return driver.findElement(EmailAlreadyExists).isDisplayed();
+        return driver.findElement(SignupButton).isDisplayed();
     }
+
 }

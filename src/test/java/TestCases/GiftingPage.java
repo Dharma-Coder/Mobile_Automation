@@ -19,13 +19,61 @@ public class GiftingPage extends BaseTest {
         super.setUp();
         GiftingPage = new gifting(driver);
         loginTest = new Login(driver);
-        loginTest.Loginapp();
     }
-    @Test(description = "Test: Verify sign up with no title")
+    @Test(description = "Test: Verify Send Gift With From SGCsBalance")
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the signup flow")
-    public void VerifyTryToLoginWithOutEmailID() {
-        if (!loginTest.TryToLoginWithOutEmailID())
+    public void VerifySendGiftWithFromSGCsBalance() throws Exception {
+        loginTest.GuardianLogin();
+        if (!GiftingPage.SendGiftWithFromSGCsBalance())
+            Assert.fail();
+    }
+    @Test(description = "Test: Verify SendGiftWithoutMessage")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("This story belongs to the signup flow")
+    public void VerifySendGiftWithoutMessage() throws Exception {
+        loginTest.GuardianLogin();
+        if (!GiftingPage.SendGiftWithoutMessage())
+            Assert.fail();
+    }
+    @Test(description = "Test: Verify SendGiftWithoutEmail")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("This story belongs to the signup flow")
+    public void VerifySendGiftWithoutEmail() throws Exception {
+        loginTest.GuardianLogin();
+        if (!GiftingPage.SendGiftWithoutEmail())
+            Assert.fail();
+    }
+    @Test(description = "Test: Verify SendGiftWithoutName")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("This story belongs to the signup flow")
+    public void VerifySendGiftWithoutName() throws Exception {
+        loginTest.GuardianLogin();
+        if (!GiftingPage.SendGiftWithoutName())
+            Assert.fail();
+    }
+    @Test(description = "Test: Verify SendGiftFromPayNow")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("This story belongs to the signup flow")
+    public void VerifySendGiftFromPayNow() throws Exception {
+        loginTest.GuardianLogin();
+        if (!GiftingPage.SendGiftFromPayNow())
+            Assert.fail();
+    }
+    @Test(description = "Test: Verify SendGiftFromPayNowWithoutAnyData")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("This story belongs to the signup flow")
+    public void VerifySendGiftFromPayNowWithoutAnyData() throws Exception {
+        loginTest.GuardianLogin();
+        if (!GiftingPage.SendGiftFromPayNowWithoutAnyData())
+            Assert.fail();
+    }
+    @Test(description = "Test: Verify SendGiftFromSGCWithoutAnyData")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("This story belongs to the signup flow")
+    public void VerifySendGiftFromSGCWithoutAnyData() throws Exception {
+        loginTest.GuardianLogin();
+        if (!GiftingPage.SendGiftFromSGCWithoutAnyData())
             Assert.fail();
     }
 

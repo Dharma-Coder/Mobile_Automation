@@ -597,5 +597,105 @@ public class Login {
         WebElement textField = driver.findElement(Password);
         textField.sendKeys(Keys.BACK_SPACE);
     }
+    public void NonGuardian() throws Exception {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(skipbutton));
+        driver.findElement(skipbutton).click();
+        wait.until(ExpectedConditions.elementToBeClickable(emailbox));
+        driver.findElement(emailbox).click();
+        driver.findElement(emailbox).sendKeys("naidu@frugaltesting.com");
+        wait.until(ExpectedConditions.elementToBeClickable(Password));
+        driver.findElement(Password).click();
+        driver.findElement(Password).sendKeys("Frugal@123");
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        driver.findElement(loginButton).click();
+        Thread.sleep(10000);
+    }
+    public void NonGuardianLogin() throws Exception {
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.elementToBeClickable(emailbox));
+        driver.findElement(emailbox).click();
+        driver.findElement(emailbox).sendKeys("rishikesh@frugaltestingin.com");
+        wait.until(ExpectedConditions.elementToBeClickable(Password));
+        driver.findElement(Password).click();
+        driver.findElement(Password).sendKeys("Frugal@123");
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        driver.findElement(loginButton).click();
+        Thread.sleep(10000);
+    }
+    public void Logout() throws Exception {
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//android.widget.ScrollView/android.view.View[1]")));
+        driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(Logout));
+        driver.findElement(Logout).click();
+    }
+    public void GuardianLogin() throws Exception {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(skipbutton));
+        driver.findElement(skipbutton).click();
+        wait.until(ExpectedConditions.elementToBeClickable(emailbox));
+        driver.findElement(emailbox).click();
+        driver.findElement(emailbox).sendKeys("tharunsaga@gmail.com");
+        wait.until(ExpectedConditions.elementToBeClickable(Password));
+        driver.findElement(Password).click();
+        driver.findElement(Password).sendKeys("Frugal@123");
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        driver.findElement(loginButton).click();
+        Thread.sleep(10000);
+
+    }
+    public void scrollTill(String direction, By elementToFind, By endElement, Boolean positionTheElement) throws Exception {
+        boolean foundElem = false;
+        long startTime = System.currentTimeMillis();
+        long timeout = 60000; // 1 minute in milliseconds
+
+        while (true) {
+            if (driver.findElements(elementToFind).size() == 1 ) {
+                WebElement element = driver.findElement(elementToFind);
+                Point elementLocation = element.getLocation();
+                Dimension screenSize = driver.manage().window().getSize();
+                if (direction.equals("RIGHT") && elementLocation.getX() > screenSize.getWidth() * 0.5 && positionTheElement) {
+                    scroll(direction, 0.25);
+                    foundElem = true;
+                    Thread.sleep(2000);
+                    break;
+                } else if (direction.equals("LEFT") && elementLocation.getX() < screenSize.getWidth() * 0.5 && positionTheElement) {
+                    scroll(direction, 0.25);
+                    foundElem = true;
+                    Thread.sleep(2000);
+                    break;
+                } else if (direction.equals("DOWN") && elementLocation.getY() > screenSize.getHeight() * 0.5 && positionTheElement) {
+                    scroll(direction, 0.27);
+                    foundElem = true;
+                    Thread.sleep(2000);
+                    break;
+                } else if (direction.equals("UP") && elementLocation.getY() < screenSize.getHeight() * 0.5 && positionTheElement) {
+                    scroll(direction, 0.4);
+                    foundElem = true;
+                    Thread.sleep(2000);
+                    break;
+                } else {
+                    foundElem = true;
+                    Thread.sleep(2000);
+                    break;
+                }
+            }
+            scroll(direction, 0.25);
+            Thread.sleep(1000);
+            if (endElement != elementToFind && driver.findElements(endElement).size() == 1) {
+                break;
+            }
+            if (isTimeoutExceeded(startTime, timeout)) {
+                break;
+            }
+        }
+        if (!foundElem) {
+            throw new Exception("Element not found: " + elementToFind.toString());
+        }
+    }
+
+    public boolean isTimeoutExceeded(long startTime, long timeout) {
+        return System.currentTimeMillis() - startTime > timeout;
+    }
+
 }
 

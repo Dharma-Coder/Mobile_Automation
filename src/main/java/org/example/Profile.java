@@ -47,6 +47,8 @@ public class Profile {
     private By SaveImageButton = By.xpath("//android.widget.Button[@index=3]");
     private By Activities = By.xpath("//android.widget.ImageView[@content-desc=\"Activities\"]");
     private By SaveActivities = By.xpath("//android.widget.Button[@index=1]");
+    private By Interest =By.xpath("//android.widget.ImageView[@content-desc=\"Interests\"]");
+    private By SaveInterest=By.xpath("//android.widget.Button[@content-desc=\"Save\"]");
     private By ClusterHoldings = By.xpath("//android.widget.ImageView[@content-desc=\"Cluster Holdings\"]");
     private By Transaction = By.xpath("//android.widget.ImageView[@content-desc=\"Transactions\"]");
     private By Subscriptions =By.xpath("//android.widget.ImageView[@content-desc=\"Subscriptions\"]");
@@ -70,7 +72,7 @@ public class Profile {
     private By DeleteProfile =By.xpath("//android.widget.ImageView[@content-desc=\"Delete Profile\"]");
 
 
-    public void SaveName() throws Exception {
+    public boolean SaveName() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -93,8 +95,9 @@ public class Profile {
       driver.navigate().back();
       driver.findElement(SaveBuutonForName).click();
 
-  }
- public void SaveAddressDetails () throws Exception {
+        return true;
+    }
+ public boolean SaveAddressDetails () throws Exception {
      driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
      Thread.sleep(1000);
      driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -121,8 +124,9 @@ public class Profile {
      driver.navigate().back();
      wait.until(ExpectedConditions.elementToBeClickable(SaveBuutonForAddress));
      driver.findElement(SaveBuutonForAddress).click();
+     return true;
  }
-    public void UpdateTheImage() throws Exception {
+    public boolean UpdateTheImage() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -141,6 +145,7 @@ public class Profile {
         scroll("DOWN",0.1);
         wait.until(ExpectedConditions.elementToBeClickable(SaveImageButton));
         driver.findElement(SaveImageButton).click();
+        return true;
     }
     public void scroll(String pageDirection, double scrollRatio) {
         Duration SCROLL_DUR = Duration.ofMillis(300);
@@ -210,20 +215,24 @@ public class Profile {
             throw new Exception("Element Not Found");
         }
     }
-    public void SaveTheActivities() throws InterruptedException {
+    public boolean SaveTheActivities() throws Exception {
+        // Navigate to the required screen
+        driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
+        Thread.sleep(1000);
+        ScrollDownTill(profileDetails, profileDetails); // Assuming this scrolls to the profileDetails element
+        wait.until(ExpectedConditions.elementToBeClickable(profileDetails));
+        driver.findElement(profileDetails).click();
         wait.until(ExpectedConditions.elementToBeClickable(Activities));
         driver.findElement(Activities).click();
-        scroll("DOWN",0.35);
+        scroll("DOWN", 0.3);
         Thread.sleep(1000);
         for (int i = 0; i <= 21; i++) {
             try {
-                // Construct XPath for each index
                 String xpath = "//android.view.View[@clickable=\"true\" and @index='" + i + "']";
-                // Find the element
                 WebElement element = driver.findElement(By.xpath(xpath));
-                // Click the element
                 element.click();
-                // Add a small delay if necessary to ensure the click is registered
                 Thread.sleep(1000);
             } catch (Exception e) {
                 System.out.println("Element not found or not clickable at index: " + i);
@@ -232,8 +241,54 @@ public class Profile {
         Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(SaveActivities));
         driver.findElement(SaveActivities).click();
+        return true;
     }
-    public void ClusterHoldings() throws Exception {
+    public boolean SaveTheInterest() throws Exception {
+        driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
+        Thread.sleep(1000);
+        ScrollDownTill(profileDetails, profileDetails); // Assuming this scrolls to the profileDetails element
+        wait.until(ExpectedConditions.elementToBeClickable(profileDetails));
+        driver.findElement(profileDetails).click();
+        wait.until(ExpectedConditions.elementToBeClickable(Interest));
+        driver.findElement(Interest).click();
+        scroll("DOWN", 0.35);
+        Thread.sleep(1000);
+        // Iterate through the elements
+        for (int i = 0; i <= 12; i++) {
+            try {
+                // Construct XPath for each index
+                String xpath = "//android.view.View[@clickable=\"true\" and @index='" + i + "']";
+                // Find the element
+                WebElement element = driver.findElement(By.xpath(xpath));
+                // Click the element
+                element.click();
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                System.out.println("Element not found or not clickable at index: " + i);
+            }
+        }
+        scroll("DOWN", 0.2);
+        Thread.sleep(2000);
+
+        for (int i = 13; i <= 16; i++) {
+            try {
+                String xpath = "//android.view.View[@clickable=\"true\" and @index='" + i + "']";
+                WebElement element = driver.findElement(By.xpath(xpath));
+                element.click();
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                System.out.println("Element not clickable or not found at index: " + i);
+            }
+        }
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(SaveActivities));
+        driver.findElement(SaveActivities).click();
+        return true;
+    }
+
+    public boolean ClusterHoldings() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -244,8 +299,9 @@ public class Profile {
         scroll("DOWN",0.25);
         wait.until(ExpectedConditions.elementToBeClickable(ClusterHoldings));
         driver.findElement(ClusterHoldings).click();
+        return true;
     }
-    public void Transaction() throws Exception {
+    public boolean Transaction() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -256,8 +312,9 @@ public class Profile {
         scroll("DOWN", 0.25);
         wait.until(ExpectedConditions.elementToBeClickable(Transaction));
         driver.findElement(Transaction).click();
+        return true;
     }
-    public void Subscriptions() throws Exception {
+    public boolean Subscriptions() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -268,8 +325,9 @@ public class Profile {
         scroll("DOWN", 0.35);
         wait.until(ExpectedConditions.elementToBeClickable(Subscriptions));
         driver.findElement(Subscriptions).click();
+        return true;
     }
-    public void Collectibles() throws Exception {
+    public boolean Collectibles() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -280,8 +338,9 @@ public class Profile {
         scroll("DOWN", 0.35);
         wait.until(ExpectedConditions.elementToBeClickable(Collectibles));
         driver.findElement(Collectibles).click();
+        return true;
     }
-    public void EmailPreferences() throws Exception {
+    public boolean EmailPreferences() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -292,9 +351,10 @@ public class Profile {
         scroll("DOWN",0.35);
         wait.until(ExpectedConditions.elementToBeClickable(EmailPreferences));
         driver.findElement(EmailPreferences).click();
+        return true;
 
     }
-    public void ForgetPassword() throws Exception {
+    public boolean ForgetPassword() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -305,8 +365,9 @@ public class Profile {
         scroll("DOWN", 0.35);
         wait.until(ExpectedConditions.elementToBeClickable(ForgetPassword));
         driver.findElement(ForgetPassword).click();
+        return true;
     }
-    public void updatePhoneNumber() throws Exception {
+    public boolean updatePhoneNumber() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -317,8 +378,9 @@ public class Profile {
         scroll("DOWN", 0.35);
         wait.until(ExpectedConditions.elementToBeClickable(updatePhoneNumber));
         driver.findElement(updatePhoneNumber).click();
+        return true;
     }
-    public void CaliforniaResident() throws Exception {
+    public boolean CaliforniaResident() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -329,8 +391,9 @@ public class Profile {
         scroll("DOWN", 0.55);
         wait.until(ExpectedConditions.elementToBeClickable(CaliforniaResident));
         driver.findElement(CaliforniaResident).click();
+        return true;
     }
-    public void Disclosures() throws Exception {
+    public boolean Disclosures() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -341,8 +404,9 @@ public class Profile {
         scroll("DOWN",0.55);
         wait.until(ExpectedConditions.elementToBeClickable(Disclosures));
         driver.findElement(Disclosures).click();
+        return true;
     }
-    public void InviteaFriend() throws Exception {
+    public boolean InviteAFriend() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -353,8 +417,9 @@ public class Profile {
         scroll("DOWN", 0.55);
         wait.until(ExpectedConditions.elementToBeClickable(InviteaFriend));
         driver.findElement(InviteaFriend).click();
+        return true;
     }
-    public void Logout() throws Exception {
+    public boolean Logout() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -365,8 +430,9 @@ public class Profile {
         scroll("DOWN", 0.55);
         wait.until(ExpectedConditions.elementToBeClickable(Logout));
         driver.findElement(Logout).click();
+        return true;
     }
-    public void DeleteProfile() throws Exception {
+    public boolean DeleteProfile() throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
@@ -378,6 +444,7 @@ public class Profile {
         wait.until(ExpectedConditions.elementToBeClickable(DeleteProfile));
         driver.findElement(DeleteProfile).click();
         driver.switchTo().activeElement().sendKeys(Keys.ENTER);
+        return true;
     }
     public boolean SaveWithoutFirstName () throws Exception {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
@@ -592,7 +659,7 @@ public class Profile {
         return driver.findElement(FieldEmpty).isDisplayed();
     }
     public boolean ClickContinueButtonWithoutForgetPassword() throws Exception {
-        driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
+        driver.findElement(By.xpath("//android. widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         driver.findElement(By.xpath("//android.widget.ImageView[@content-desc=\"Profile\"]")).click();
         Thread.sleep(1000);

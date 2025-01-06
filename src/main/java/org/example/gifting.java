@@ -47,8 +47,9 @@ public class gifting {
     private By PayNowButton = By.xpath("//android.widget.Button[@content-desc=\"Pay Now\"]");
     private By GiftFromSGCsBalanceButton = By.xpath("//android.widget.Button[@content-desc=\"Gift from your SGC balance?\"]");
     private By ErrorMessageForField = By.xpath("//android.view.View[@content-desc=\"Field is empty\"]");
+    private By OneNumberCluster = By.xpath("//android.widget.TextView[@text=\"£40.00\"]");
 
-    public void SendGiftWithFromSGCsBalance() throws InterruptedException {
+    public boolean SendGiftWithFromSGCsBalance() throws InterruptedException {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(Actions));
@@ -95,6 +96,7 @@ public class gifting {
         wait.until(ExpectedConditions.elementToBeClickable(GiftFromSGCsBalanceButton));
         driver.findElement(GiftFromSGCsBalanceButton).click();
         Thread.sleep(10000);
+        return true;
     }
 
     public void scroll(String pageDirection, double scrollRatio) {
@@ -189,8 +191,6 @@ public class gifting {
         Thread.sleep(10000);
         driver.findElement(RecipientEmail).sendKeys("ankitSDET01@gmail.com");
         Thread.sleep(10000);
-
-
         wait.until(ExpectedConditions.elementToBeClickable(RecipientName));
         driver.findElement(RecipientName).click();
         driver.findElement(RecipientName).click();
@@ -298,7 +298,7 @@ public class gifting {
         return driver.findElement(ErrorMessageForField).isDisplayed();
     }
 
-    public void SendGiftFromPayNow() throws InterruptedException {
+    public boolean SendGiftFromPayNow() throws InterruptedException {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(Actions));
@@ -343,9 +343,10 @@ public class gifting {
         Thread.sleep(10000);
         wait.until(ExpectedConditions.elementToBeClickable(PayNowButton));
         driver.findElement(PayNowButton).click();
-        Thread.sleep(10000);
+        wait.until(ExpectedConditions.elementToBeClickable(OneNumberCluster));
+        return driver.findElement(OneNumberCluster).isDisplayed();
     }
-    public void SendGiftFromSGCWithoutAnyData() throws InterruptedException {
+    public boolean SendGiftFromSGCWithoutAnyData() throws InterruptedException {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(Actions));
@@ -361,8 +362,9 @@ public class gifting {
         wait.until(ExpectedConditions.elementToBeClickable(GiftFromSGCsBalanceButton));
         driver.findElement(GiftFromSGCsBalanceButton).click();
         Thread.sleep(10000);
+        return true;
     }
-    public void SendGiftFromPayNowWithoutAnyData() throws InterruptedException {
+    public boolean SendGiftFromPayNowWithoutAnyData() throws InterruptedException {
         driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
         Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(Actions));
@@ -378,7 +380,99 @@ public class gifting {
         wait.until(ExpectedConditions.elementToBeClickable(PayNowButton));
         driver.findElement(PayNowButton).click();
         Thread.sleep(10000);
-
+        return true;
+    }
+    public boolean SendGiftWithOutTermsAndCondition() throws InterruptedException {
+        driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(Actions));
+        driver.findElement(Actions).click();
+        wait.until(ExpectedConditions.elementToBeClickable(EcoFriendlyGifting));
+        driver.findElement(EcoFriendlyGifting).click();
+        wait.until(ExpectedConditions.elementToBeClickable(PersonalEcoFriendlyGifts));
+        driver.findElement(PersonalEcoFriendlyGifts).click();
+        Thread.sleep(10000);
+        driver.findElement(AllContacts).click();
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.elementToBeClickable(ChooseOccasionOthers));
+        driver.findElement(ChooseOccasionOthers).click();
+        wait.until(ExpectedConditions.elementToBeClickable(ChooseOccasionCongratulations));
+        driver.findElement(ChooseOccasionCongratulations).click();
+        Thread.sleep(10000);
+        scroll("DOWN", 0.3);
+        wait.until(ExpectedConditions.elementToBeClickable(RecipientEmail));
+        driver.findElement(RecipientEmail).click();
+        Thread.sleep(10000);
+        driver.findElement(RecipientEmail).sendKeys("ankitSDET01@gmail.com");
+        Thread.sleep(10000);
+        driver.navigate().back();
+        wait.until(ExpectedConditions.elementToBeClickable(RecipientName));
+        driver.findElement(RecipientName).click();
+        driver.findElement(RecipientName).click();
+        Thread.sleep(10000);
+        driver.findElement(RecipientName).sendKeys("ankit");
+        driver.navigate().back();
+        Thread.sleep(10000);
+        scroll("DOWN", 0.3);
+        wait.until(ExpectedConditions.elementToBeClickable(Message));
+        driver.findElement(Message).click();
+        Thread.sleep(10000);
+        driver.findElement(Message).sendKeys("Test gift");
+        Thread.sleep(10000);
+        driver.navigate().back();
+        Thread.sleep(10000);
+        scroll("DOWN", 0.2);
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.elementToBeClickable(GiftFromSGCsBalanceButton));
+        driver.findElement(GiftFromSGCsBalanceButton).click();
+        Thread.sleep(10000);
+        return true;
+    }
+    public boolean SendFromPayNowWithOutClickingTermsAndCondition() throws InterruptedException {
+        driver.findElement(By.xpath("//android.widget.ScrollView/android.view.View[1]")).click();
+        Thread.sleep(1000);
+        wait.until(ExpectedConditions.elementToBeClickable(Actions));
+        driver.findElement(Actions).click();
+        wait.until(ExpectedConditions.elementToBeClickable(EcoFriendlyGifting));
+        driver.findElement(EcoFriendlyGifting).click();
+        wait.until(ExpectedConditions.elementToBeClickable(PersonalEcoFriendlyGifts));
+        driver.findElement(PersonalEcoFriendlyGifts).click();
+        Thread.sleep(10000);
+        driver.findElement(AllContacts).click();
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.elementToBeClickable(ChooseOccasionOthers));
+        driver.findElement(ChooseOccasionOthers).click();
+        wait.until(ExpectedConditions.elementToBeClickable(ChooseOccasionCongratulations));
+        driver.findElement(ChooseOccasionCongratulations).click();
+        Thread.sleep(10000);
+        scroll("DOWN", 0.3);
+        wait.until(ExpectedConditions.elementToBeClickable(RecipientEmail));
+        driver.findElement(RecipientEmail).click();
+        Thread.sleep(10000);
+        driver.findElement(RecipientEmail).sendKeys("ankitSDET01@gmail.com");
+        Thread.sleep(10000);
+        driver.navigate().back();
+        wait.until(ExpectedConditions.elementToBeClickable(RecipientName));
+        driver.findElement(RecipientName).click();
+        driver.findElement(RecipientName).click();
+        Thread.sleep(10000);
+        driver.findElement(RecipientName).sendKeys("ankit");
+        driver.navigate().back();
+        Thread.sleep(10000);
+        scroll("DOWN", 0.3);
+        wait.until(ExpectedConditions.elementToBeClickable(Message));
+        driver.findElement(Message).click();
+        Thread.sleep(10000);
+        driver.findElement(Message).sendKeys("Test gift");
+        Thread.sleep(10000);
+        driver.navigate().back();
+        Thread.sleep(10000);
+        scroll("DOWN", 0.2);
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.elementToBeClickable(PayNowButton));
+        driver.findElement(PayNowButton).click();
+        Thread.sleep(10000);
+        return true;
     }
 }
 

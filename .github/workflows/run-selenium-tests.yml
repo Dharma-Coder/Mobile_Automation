@@ -1,0 +1,39 @@
+name: UI Automation Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ui-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java environment
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17' # Use the Java version your project requires
+
+      # Step 3: Cache Maven dependencies
+      - name: Cache Maven Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven
+
+      # Step 4: Install Chrome
+      - name: Install Chrome
+        run: sudo apt-get install -y google-chrome-stable
+
+      # Step 5: Run Maven tests
+      - name: Run UI Automation Tests
+        run: mvn clean test -Dheadless=true
+        env:
+          CI: true

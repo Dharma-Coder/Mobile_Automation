@@ -90,15 +90,9 @@ public class dashboard {
     private By ClickOnGoogleicon = By.xpath("(//android.widget.ImageView[@resource-id=\"oppo:id/resolver_item_icon\"])[1]");
     private By FaceBookPage = By.xpath("//android.widget.Image[@text=\"Facebook wordmark\"]");
     private By InstagramPage = By.xpath("//android.widget.Image[@text=\"Instagram\"]");
-    private By GigrinPrysg   = By.xpath("//android.view.View[@content-desc=\"Gigrin Prysg, United Kingdom\n" +
-            "2 Clusters\n" +
-            "Selected\"]");
-    private By CodeRhyal =By.xpath("//android.view.View[@content-desc=\"Coed Rhyal, United Kingdom\n" +
-            "1 Cluster\n" +
-            "View Detail\"]");
-    private By oceanSanctuary = By.xpath("//android.view.View[@content-desc=\"Ocean Sanctuary, Canada\n" +
-            "1 Cluster\n" +
-            "View Detail\"]");
+    private By GigrinPrysg   = By.xpath("//android.view.View[contains(@content-desc,\"Gigrin Prysg, United Kingdom\")]");
+    private By CodeRhyal =By.xpath("//android.view.View[contains(@content-desc,\"Coed Rhyal, United Kingdom\")]\n");
+    private By oceanSanctuary = By.xpath("//android.view.View[contains(@content-desc,\"Ocean Sanctuary, Canada\")]\n");
 
 
     public boolean ClickOnSeedlingGBP() throws Exception {
@@ -709,7 +703,7 @@ public class dashboard {
         wait.until(ExpectedConditions.elementToBeClickable(CodeRhyal));
         driver.findElement(CodeRhyal).click();
         Thread.sleep(1000);
-        scroll("DOWN", 0.3);
+        scroll("DOWN", 0.4);
         Thread.sleep(1000);
         wait.until(ExpectedConditions.elementToBeClickable(ReadMore));
         driver.findElement(ReadMore).click();

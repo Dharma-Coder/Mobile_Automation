@@ -44,7 +44,5 @@ public class BaseTest {
             System.out.println(e.getMessage());
         }
     }
-    public static WebDriver GetDriver() {
-        return driver;
-    }
+
 }

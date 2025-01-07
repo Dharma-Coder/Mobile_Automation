@@ -93,6 +93,7 @@ public class dashboard {
     private By GigrinPrysg   = By.xpath("//android.view.View[contains(@content-desc,\"Gigrin Prysg, United Kingdom\")]");
     private By CodeRhyal =By.xpath("//android.view.View[contains(@content-desc,\"Coed Rhyal, United Kingdom\")]\n");
     private By oceanSanctuary = By.xpath("//android.view.View[contains(@content-desc,\"Ocean Sanctuary, Canada\")]\n");
+    private By oceaanctuary = By.xpath("//android.view.View[contains(@content-desc,\"Ocean Sanctuary, Canada\")]\n");
 
 
     public boolean ClickOnSeedlingGBP() throws Exception {

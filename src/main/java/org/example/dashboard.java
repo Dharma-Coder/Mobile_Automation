@@ -90,9 +90,15 @@ public class dashboard {
     private By ClickOnGoogleicon = By.xpath("(//android.widget.ImageView[@resource-id=\"oppo:id/resolver_item_icon\"])[1]");
     private By FaceBookPage = By.xpath("//android.widget.Image[@text=\"Facebook wordmark\"]");
     private By InstagramPage = By.xpath("//android.widget.Image[@text=\"Instagram\"]");
-    private By GigrinPrysg   = By.xpath("//android.view.View[contains(@content-desc,\"Gigrin Prysg, United Kingdom\")]");
-    private By CodeRhyal =By.xpath("//android.view.View[contains(@content-desc,\"Coed Rhyal, United Kingdom\")]\n");
-    private By oceanSanctuary = By.xpath("//android.view.View[contains(@content-desc,\"Ocean Sanctuary, Canada\")]\n");
+    private By GigrinPrysg   = By.xpath("//android.view.View[@content-desc=\"Gigrin Prysg, United Kingdom\n" +
+            "2 Clusters\n" +
+            "View Detail\"]");
+    private By CodeRhyal =By.xpath("//android.view.View[@content-desc=\"Coed Rhyal, United Kingdom\n" +
+            "1 Cluster\n" +
+            "View Detail\"]");
+    private By oceanSanctuary = By.xpath("//android.view.View[@content-desc=\"Ocean Sanctuary, Canada\n" +
+            "1 Cluster\n" +
+            "View Detail\"]");
     private By oceaanctuary = By.xpath("//android.view.View[contains(@content-desc,\"Ocean Sanctuary, Canada\")]\n");
 
 
@@ -776,6 +782,12 @@ public class dashboard {
         driver.findElement(SwipeRightButton).click();
         Thread.sleep(1000);
         return driver.findElement(By.xpath("//android.view.View[@content-desc=\"Zone 1 - Lakeside vegetation\"]")).isDisplayed();
+    }
+    public int readPendingClusterData() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ClusterData));
+        String Val = driver.findElement(ClusterData).getText();
+        int i = Integer.parseInt(Val);
+        return i;
     }
 
 }

@@ -25,7 +25,7 @@ public class GiftingPage extends BaseTest {
     @Story("This story belongs to the signup flow")
     public void VerifySendGiftWithFromSGCsBalance() throws Exception {
         loginTest.GuardianLogin();
-        if (!GiftingPage.SendGiftWithFromSGCsBalance())
+        if (!GiftingPage.SendGiftWithGBPFromSGCsBalance())
             Assert.fail();
     }
     @Test(description = "Test: Verify SendGiftWithoutMessage")

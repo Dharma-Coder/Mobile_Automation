@@ -29,6 +29,7 @@ public class DashboardPage extends BaseTest {
     public void VerifyTryToLoginWithOutEmailID() throws Exception {
         loginTest.Loginapp();
         DashboardPage.ClickOnSeedlingGBP();
+
             Assert.fail();
     }
     @Test(description = "Test: Verify Click On Become A Guardian")

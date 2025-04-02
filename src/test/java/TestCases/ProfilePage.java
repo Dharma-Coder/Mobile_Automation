@@ -24,24 +24,28 @@ public class ProfilePage extends BaseTest {
     }
     @Test(description = "Verify the login ", priority = 0)
     public void VerifyName() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveName())
             Assert.fail();
     }
     @Test(description = "Verify the login ", priority = 0)
     public void VerifySaveAddressDetails() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveAddressDetails())
             Assert.fail();
     }
     @Test(description = "Verify the login ", priority = 0)
     public void VerifyUpdateTheImage() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.UpdateTheImage())
             Assert.fail();
     }
     @Test(description = "Verify the login ", priority = 0)
     public void VerifyClusterHoldings() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.ClusterHoldings())
             Assert.fail();
@@ -50,6 +54,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyTransaction() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.Transaction())
             Assert.fail();
@@ -58,6 +63,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveTheActivities() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveTheActivities())
             Assert.fail();
@@ -66,6 +72,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveTheInterest() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveTheInterest())
             Assert.fail();
@@ -76,6 +83,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySubscriptions() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.Subscriptions())
             Assert.fail();
@@ -84,6 +92,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyCollectibles() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.Collectibles())
             Assert.fail();
@@ -92,6 +101,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyEmailPreferences() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.EmailPreferences())
             Assert.fail();
@@ -100,6 +110,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyForgetPassword() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.ForgetPassword())
             Assert.fail();
@@ -108,6 +119,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyUpdatePhoneNumber() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.updatePhoneNumber())
             Assert.fail();
@@ -116,6 +128,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyCaliforniaResident() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.CaliforniaResident())
             Assert.fail();
@@ -124,6 +137,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyDisclosures() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.Disclosures())
             Assert.fail();
@@ -132,6 +146,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyInviteAFriend() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.InviteAFriend())
             Assert.fail();
@@ -140,6 +155,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyLogout() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.Logout())
             Assert.fail();
@@ -148,6 +164,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyDeleteProfile() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.DeleteProfile())
             Assert.fail();
@@ -156,6 +173,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveWithoutFirstName() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveWithoutFirstName())
             Assert.fail();
@@ -165,6 +183,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveLastNameEmpty() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveLastNameEmpty())
             Assert.fail();
@@ -173,6 +192,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveFirstAndLastNameEmpty() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveFirstAndLastNameEmpty())
             Assert.fail();
@@ -181,6 +201,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveAddressWithoutCityDetails() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveAddressWithoutCityDetails())
             Assert.fail();
@@ -189,6 +210,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveAddressWithoutStateDetails() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveAddressWithoutStateDetails())
             Assert.fail();
@@ -197,6 +219,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveAddressWithoutCountryDetails() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveAddressWithoutCountryDetails())
             Assert.fail();
@@ -205,6 +228,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifySaveAddressWithoutDetails() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.SaveAddressWithoutDetails())
             Assert.fail();
@@ -213,6 +237,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyClickContinueButtonWithoutPhoneNumber() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.ClickContinueButtonWithoutPhoneNumber())
             Assert.fail();
@@ -221,6 +246,7 @@ public class ProfilePage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the ProfilePage")
     public void VerifyClickContinueButtonWithoutForgetPassword() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!ProfilePage.ClickContinueButtonWithoutForgetPassword())
             Assert.fail();

@@ -27,6 +27,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadGuardianCertificate() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadGuardianCertificate())
             Assert.fail();
@@ -35,6 +36,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadMapCodeRhyal() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadMapCodeRhyal())
             Assert.fail();
@@ -43,6 +45,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadMapGigrin() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadMapGigrin())
             Assert.fail();
@@ -51,6 +54,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadMapOceanSanctuary() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadMapOceanSanctuary())
             Assert.fail();
@@ -59,6 +63,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadCalendar() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadCalendar())
             Assert.fail();
@@ -67,6 +72,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadBackGroundImage1() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadBackGroundImage1())
             Assert.fail();
@@ -75,6 +81,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadBackGroundImage2() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadBackGroundImage2())
             Assert.fail();
@@ -83,6 +90,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadBackGroundImage3() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadBackGroundImage3())
             Assert.fail();
@@ -91,6 +99,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadStickers1() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadStickers1())
             Assert.fail();
@@ -99,6 +108,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadStickers2() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadStickers2())
             Assert.fail();
@@ -107,6 +117,7 @@ public class CollectiblesPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the Collectibles flow")
     public void VerifyDownloadStickers3() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!CollectiblesPage.DownloadStickers3())
             Assert.fail();

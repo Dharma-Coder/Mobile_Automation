@@ -21,6 +21,7 @@ public class LoginTest extends BaseTest {
 
         @Test(description = "Verify the login ", priority = 0)
         public void VerifyLogin() throws Exception {
+            loginTest.handlePermissions();
             loginTest.Loginapp();
         }
        @Test(description = "Test: Verify sign up with no title")
@@ -34,6 +35,7 @@ public class LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the signup flow")
     public void VerifyTryToLoginWithOutPassword()  {
+        loginTest.handlePermissions();
         if(!loginTest.TryToLoginWithOutPassword())
             Assert.fail();
     }
@@ -41,6 +43,7 @@ public class LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the signup flow")
     public void VerifyTryToLoginWithInvalidPassword()  {
+        loginTest.handlePermissions();
         if(!loginTest.LoginWithInvalidPassword())
             Assert.fail();
     }
@@ -48,6 +51,7 @@ public class LoginTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the signup flow")
     public void VerifyTryToLoginWithInvalidUserEmail()  {
+        loginTest.handlePermissions();
         if(!loginTest.LoginWithInvalidUserEmail())
             Assert.fail();
     }

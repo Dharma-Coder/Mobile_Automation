@@ -27,14 +27,17 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Story("This story belongs to the signup flow")
     public void VerifyTryToLoginWithOutEmailID() throws Exception {
+        loginTest.handlePermissions();
         loginTest.Loginapp();
         DashboardPage.ClickOnSeedlingGBP();
+
             Assert.fail();
     }
     @Test(description = "Test: Verify Click On Become A Guardian")
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnBecomeAGuardian() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         DashboardPage.ClickOnBecomeAGuardian();
     }
@@ -42,6 +45,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnLearnMoreButton() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnLearnMoreButton())
             Assert.fail();
@@ -50,6 +54,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnGiftCardAny() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnGiftCardAny())
             Assert.fail();
@@ -58,6 +63,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnExploreSquads() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnExploreSquads())
             Assert.fail();
@@ -66,6 +72,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnStartCompletingProfile() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnStartCompletingProfile())
             Assert.fail();
@@ -74,6 +81,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnViewCollectibles() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnViewCollectibles())
             Assert.fail();
@@ -82,6 +90,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnLearnMoreAboutUs() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnLearnMoreAboutUs())
             Assert.fail();
@@ -90,6 +99,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnBlog1() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnBlog1())
             Assert.fail();
@@ -98,6 +108,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnBlog2() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnBlog2())
             Assert.fail();
@@ -107,6 +118,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnBlog3() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnBlog3())
             Assert.fail();
@@ -115,6 +127,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnBlog4() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnBlog4())
             Assert.fail();
@@ -123,6 +136,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnShowMoreButtonForBlogs() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnShowMoreButton())
             Assert.fail();
@@ -131,6 +145,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnWhatIsSacredGrovesVideo() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnWhatIsSacredGrovesVideo())
             Assert.fail();
@@ -139,6 +154,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnBenefitsBecomingGuardianVideo() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnBenefitsBecomingGuardianVideo())
             Assert.fail();
@@ -147,6 +163,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnBecomingGuardianOnMobileAppVideo() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnBecomingGuardianOnMobileAppVideo())
             Assert.fail();
@@ -156,6 +173,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnSubscribeClusterOnMobileAppVideo() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnSubscribeClusterOnMobileAppVideo())
             Assert.fail();
@@ -165,6 +183,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnStepByStepReceivingAGiftOnMobileAppVideo() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnStepByStepReceivingAGiftOnMobileAppVideo())
             Assert.fail();
@@ -174,6 +193,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnFaceBook() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnFaceBook())
             Assert.fail();
@@ -182,6 +202,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnInstagram() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnInstagram())
             Assert.fail();
@@ -190,6 +211,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnLinkDin() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnLinkDin())
             Assert.fail();
@@ -199,6 +221,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnSeedlingGBP() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnSeedlingGBP())
             Assert.fail();
@@ -207,6 +230,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnSproutPlanGBP() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnSproutPlanGBP())
             Assert.fail();
@@ -216,6 +240,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnSafariPlanGBP() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnSafariPlanGBP())
             Assert.fail();
@@ -224,6 +249,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnTimeGBPOneNumber() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnTimeGBPOneNumber())
             Assert.fail();
@@ -232,6 +258,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnTimeGBPTwoNumbers() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnTimeGBPTwoNumbers())
             Assert.fail();
@@ -240,6 +267,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnTimeGBPThreeNumbers() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnTimeGBPThreeNumbers())
             Assert.fail();
@@ -248,6 +276,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnTimeGBPFourNumbers() throws Exception {
+        loginTest.handlePermissions();
         loginTest.NonGuardian();
         if (!DashboardPage.ClickOnTimeGBPFourNumbers())
             Assert.fail();
@@ -270,6 +299,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyClickOnFindOutHow() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!DashboardPage.ClickOnFindOutHow())
             Assert.fail();
@@ -278,6 +308,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifySelectGigrinPrysg() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!DashboardPage.SelectGigrinPrysg())
             Assert.fail();
@@ -286,6 +317,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifySelectCodeRhyal() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!DashboardPage.SelectCodeRhyal())
             Assert.fail();
@@ -294,6 +326,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.CRITICAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifySelectOceanSanctuary() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!DashboardPage.SelectOceanSanctuary())
             Assert.fail();
@@ -303,6 +336,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyScrollGigrinPageImages() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!DashboardPage.ScrollGigrinPageImages())
             Assert.fail();
@@ -311,6 +345,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyScrollCodeRhyalImages() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!DashboardPage.ScrollCodeRhyalImages())
             Assert.fail();
@@ -319,6 +354,7 @@ public class DashboardPage extends BaseTest {
     @Severity(SeverityLevel.NORMAL)
     @Story("This story belongs to the Dashboard Page flow")
     public void VerifyScrollOceanSanctuaryImages() throws Exception {
+        loginTest.handlePermissions();
         loginTest.GuardianLogin();
         if (!DashboardPage.ScrollOceanSanctuaryImages())
             Assert.fail();

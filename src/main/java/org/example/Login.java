@@ -156,7 +156,7 @@ public class Login {
     private By sproutPlanAmount =By.xpath("//android.widget.TextView[@text=\"£80.00\"]");
     private By safariPlanAmount =By.xpath("//android.widget.TextView[@text=\"£200.00\"]");
     private By OneTimeCheckOneNumber =By.xpath("//android.widget.TextView[@text=\"£160.00\"]");
-
+    private By AllowButton =By.xpath("//android.widget.Button[@resource-id=\"com.android.permissioncontroller:id/permission_allow_button\"]");
 
     public void Loginapp() throws Exception {
     wait.until(ExpectedConditions.visibilityOfElementLocated(skipbutton));
@@ -696,6 +696,19 @@ public class Login {
     public boolean isTimeoutExceeded(long startTime, long timeout) {
         return System.currentTimeMillis() - startTime > timeout;
     }
-
+    public void handlePermissions() {
+        for (int i = 0; i < 2; i++) {  // Click the Allow button two times
+            try {
+                if (driver.findElement(AllowButton).isDisplayed()) {
+                    driver.findElement(AllowButton).click();
+                    Thread.sleep(1000);// Wait for the next permission prompt
+                    driver.findElement(AllowButton).click();
+                    Thread.sleep(1000);// Wait for the next permission prompt
+                }
+            } catch (NoSuchElementException | InterruptedException e) {
+                break;  // If the Allow button is not found, proceed
+            }
+        }
+    }
 }
 
